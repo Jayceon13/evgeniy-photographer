@@ -52,7 +52,7 @@
       <transition name="menu">
         <div class="block-menu"
              v-if="showBurgerMenu"
-        style="display: flex; justify-content: center; align-items: center">
+             style="display: flex; justify-content: center; align-items: center">
           <div @click="() => {$router.push ('/'); showBurgerMenu = false}"
                class="block-main"
                style="cursor: pointer; width: fit-content"
@@ -60,7 +60,7 @@
             Главная
           </div>
           <div class="header-block__menu-item"
-          style="justify-content: center; width: auto; flex-direction: column;align-items: center">
+               style="justify-content: center; width: auto; flex-direction: column;align-items: center">
             <div id="rate" class="header-block__menu-item_holiday"
                  style="justify-content: center; position: relative; align-items: center; width: fit-content"
                  @click="openRateBlock()"
@@ -71,7 +71,7 @@
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" class="rate-block"
-              style="position: relative; top: 0">
+                   style="position: relative; top: 0">
                 <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/individual'); hideRateBlock =false ;showBurgerMenu = false}">Индивидульный</p>
                 <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/wedding'); hideRateBlock =false; showBurgerMenu = false}">Свадебный</p>
                 <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/family'); hideRateBlock =false; showBurgerMenu = false}">Семейный</p>
