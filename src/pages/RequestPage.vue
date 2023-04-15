@@ -45,7 +45,7 @@ export default defineComponent({
   padding: 0;
 }
 p {
-  padding: calc(5px + 1vw) 0px;
+  padding: calc(10px + 1vw) 0px;
   font-size: calc(8px + 1vw);
   color: #ffffff;
   line-height: normal;
@@ -54,7 +54,7 @@ h2{
   padding: 10px 0;
   text-transform: uppercase;
   color: white;
-  font-size: calc(12px + 2vw);
+  font-size: calc(8px + 2vw);
   line-height: normal;
   text-align: center;
 }

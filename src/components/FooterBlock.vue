@@ -164,7 +164,8 @@ export default {
   padding: 60px 0;
 }
 .footer-aside p{
-  font-size: 20px;
+
+  font-size: calc(10px + 1vw);
   padding: 6px;
 }
 .footer-block__menu-item_order{

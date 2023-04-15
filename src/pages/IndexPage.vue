@@ -375,7 +375,7 @@ export default defineComponent({
 .thirty-block_items--text{
   color: white;
   width: 100%;
-  font-size: 20px;
+  font-size: calc(10px + 1vw);
   padding-right: 5%;
   display: flex;
   flex-flow: column;
@@ -391,7 +391,7 @@ export default defineComponent({
 .twenty-block_items--text{
   color: white;
   width: 100%;
-  font-size: 20px;
+  font-size: calc(10px + 1vw);
   padding-left: 5%;
   flex-flow: column;
 }
@@ -399,7 +399,7 @@ export default defineComponent({
 .seventh-block_items--text{
   color: white;
   width: 100%;
-  font-size: 20px;
+  font-size: calc(10px + 1vw);
   padding-left: 5%;
   flex-flow: column;
   justify-content: center;
@@ -420,7 +420,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: calc(10px + 1vw);
   cursor: pointer;
   background-size: cover;
   transition: 0.5s ease-in-out;
@@ -574,7 +574,7 @@ export default defineComponent({
   display: flex;
   width: 100%;
   justify-content: center;
-  font-size: 35px;
+  font-size: calc(8px + 2vw);
   text-transform: uppercase;
   color: #FF9900;
 }
@@ -666,9 +666,7 @@ export default defineComponent({
     padding: 0;
     margin: 0;
   }
-  .block-h{
-    font-size: 16px;
-  }
+
 
 }
 </style>

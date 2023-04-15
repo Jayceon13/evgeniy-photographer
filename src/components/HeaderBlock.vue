@@ -69,7 +69,7 @@
               <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
             </div>
             <transition name="ratehide">
-              <div v-if="hideRateBlock" style="position: relative; margin: 0" class="rate-block">
+              <div v-if="hideRateBlock" class="rate-block">
                 <p style="font-size: 17px" @click="() => {$router.push('/individual'); hideRateBlock =false ;showBurgerMenu = false}">Индивидульный</p>
                 <p style="font-size: 17px" @click="() => {$router.push('/wedding'); hideRateBlock =false; showBurgerMenu = false}">Свадебный</p>
                 <p style="font-size: 17px" @click="() => {$router.push('/family'); hideRateBlock =false; showBurgerMenu = false}">Семейный</p>
