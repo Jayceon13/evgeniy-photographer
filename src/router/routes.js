@@ -8,7 +8,9 @@ const routes = [
       { path: '/individual', component: () => import('pages/RatesIndivid.vue') },
       { path: '/wedding', component: () => import('pages/RatesWedding.vue') },
       { path: '/family', component: () => import('pages/RatesFamily') },
-      { path: '/love', component: () => import('pages/RatesLove') }
+      { path: '/love', component: () => import('pages/RatesLove') },
+      { path: '/rates', component: () => import('pages/SelectionRates') },
+      { path: '/request', component: () => import('pages/RequestPage') },
 
 
     ]

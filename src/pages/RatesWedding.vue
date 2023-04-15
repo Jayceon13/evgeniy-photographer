@@ -35,7 +35,7 @@
                     320 евро
                   </p>
                 </div>
-                <div class="text-block">
+                <div class="text-block column">
                   <p class="gold">
                     Стамбул/Фетхие/Мармарис/Бодрум
                   </p>
@@ -109,7 +109,7 @@
 
 <style scoped>
 *{
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   margin: 0;
   padding: 0;
 }
@@ -195,6 +195,12 @@ h2{
   justify-content: center;
   padding: 0 40px;
   border: 2px solid #FF9900;
+}
+.wedding-page_block-main_title-content_btn-text:hover {
+  background: linear-gradient(180deg, #FF9900 -248.53%, #090C0C 89.24%);
+}
+.wedding-page_block-main_title-content_btn-text:active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #FF9900 -118.12%, #090C0C 100%);
 }
 .text-block {
   display: flex;
