@@ -11,7 +11,7 @@
         <div class="footer-block__menu">
           <div class="footer-block__menu-item">
             <div class="footer-block__menu-item_start"
-                 @click="scrollToStart()">
+                 @click="scrollToTop()">
               <p>Вернуться в начало</p>
             </div>
           </div>
@@ -42,7 +42,8 @@
             </div>
           </div>
           <div class="footer-block__menu-item">
-            <div class="footer-block__menu-item_produced">
+            <div class="footer-block__menu-item_produced"
+            @click="goToDesign()">
               <p>Разработка сайта © rimari.design</p>
             </div>
           </div>
@@ -73,8 +74,14 @@ export default {
     goToInst(){
       window.location.href = 'https://instagram.com/alanya.photographer?igshid=YmMyMTA2M2Y='
     },
-    scrollToStart() {
-      document.getElementById('start').scrollIntoView({ behavior: 'smooth' });
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    },
+    goToDesign(){
+      window.location.href = 'https://taplink.cc/rimari.design'
     },
 
   }
@@ -83,7 +90,7 @@ export default {
 
 <style scoped>
 *{
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
   margin: 0;
   padding: 0;
 }

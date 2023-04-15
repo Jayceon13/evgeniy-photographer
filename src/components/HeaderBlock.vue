@@ -162,6 +162,7 @@ export default {
 *{
   margin: 0;
   padding: 0;
+  font-family: Montserrat-Regular;
 }
 #rate{
   display: flex;
@@ -171,8 +172,8 @@ export default {
   justify-content: center;
   flex-flow: column;
   text-align: center;
-  margin-left: -25px;
   transition: transform 0.5s;
+  top: 30px;
 }
 .rate-block p{
   transition: 0.5s ease-in-out;
@@ -212,11 +213,13 @@ export default {
 .arrow{
   margin-left: 5px;
   transition: 0.5s ease-in-out;
+
 }
 .arrow-active{
   rotate: -180deg;
   transition: 0.5s ease-in-out;
   margin-left: 5px;
+
 }
 .header {
   display: flex;
@@ -241,7 +244,6 @@ export default {
 }
 .header-aside p{
   font-size: 20px;
-  font-family: Montserrat;
 }
 .header-block__menu-item_order{
   position: fixed;
@@ -501,19 +503,24 @@ export default {
 .header-block__menu-item {
   padding: 0 20px;
   width: max-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
 }
 
 .header-block__menu-item_animators,
 .header-block__menu-item_holiday,
-.header-block__menu-item_show,
 .header-block__menu-item_about {
   cursor: pointer;
   transition: 1s ease-in-out;
 }
 
+.header-block__menu-item_holiday{
+
+}
 .header-block__menu-item_animators:hover,
 .header-block__menu-item_holiday:hover,
-.header-block__menu-item_show:hover,
 .header-block__menu-item_about:hover {
   cursor: pointer;
   color: #FF9900;
