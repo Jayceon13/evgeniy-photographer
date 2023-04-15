@@ -474,8 +474,7 @@ export default {
   display: block; }
 .hamburger-inner::before {
   top: -10px; }
-.hamburger-inner::after {
-  bottom: -10px; }
+
 .hamburger--3dx .hamburger-box {
   perspective: 80px; }
 
@@ -488,9 +487,9 @@ export default {
   background-color: transparent !important;
   transform: rotateY(180deg); }
 .hamburger--3dx.is-active .hamburger-inner::before {
-  transform: translate3d(0, 10px, 0) rotate(45deg); }
+  transform: translate3d(0, 5px, 0) rotate(45deg); }
 .hamburger--3dx.is-active .hamburger-inner::after {
-  transform: translate3d(0, -10px, 0) rotate(-45deg); }
+  transform: translate3d(0, -5px, 0) rotate(-45deg); }
 
 .header-block__menu {
   display: flex;
