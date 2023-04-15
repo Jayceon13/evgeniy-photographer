@@ -149,7 +149,7 @@ export default {
   top: 0;
   width: 100vw;
   color: white;
-  z-index: 999;
+  z-index: 70;
   justify-content: center;
   flex-direction: column;
   padding: 60px 0;
@@ -217,6 +217,10 @@ export default {
   cursor: pointer;
   color: #FF9900;
 }
-
+@media screen and (max-width: 1000px) {
+  .rate-block{
+    flex-flow: column;
+  }
+}
 
 </style>

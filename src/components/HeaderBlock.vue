@@ -23,20 +23,13 @@
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" class="rate-block">
-                <p @click="$router.push('/individual')">Индивидульный</p>
-                <p @click="$router.push('/wedding')">Свадебный</p>
-                <p @click="$router.push('/family')">Семейный</p>
-                <p @click="$router.push('/love')">Love Story</p>
+                <p @click="() => {$router.push('/individual'); hideRateBlock =false}">Индивидульный</p>
+                <p @click="() => {$router.push('/wedding'); hideRateBlock =false}">Свадебный</p>
+                <p @click="() => {$router.push('/family'); hideRateBlock =false}">Семейный</p>
+                <p @click="() => {$router.push('/love'); hideRateBlock =false}">Love Story</p>
               </div>
             </transition>
           </div>
-<!--          <div class="header-block__menu-item">-->
-<!--            <div class="header-block__menu-item_show"-->
-<!--                 @click="scrollToPartners"-->
-<!--            >-->
-<!--              <p>Партнеры и Клиенты</p>-->
-<!--            </div>-->
-<!--          </div>-->
           <div class="header-block__menu-item">
             <div class="header-block__menu-item_about"
                  @click="$router.push ('/request')"
@@ -46,7 +39,7 @@
           </div>
         </div>
         <div class="header-block__menu-item_order"
-             @click="scrollToForm">
+             @click="goToInst">
           <img src="/icons/Inst.svg" alt="">
         </div>
         <div v-if="!isWideScreen" :class= "!showBurgerMenu? 'hamburger hamburger--3dx' : 'hamburger is-active hamburger--3dx'" @click="blockBurgerMenu">
@@ -59,7 +52,7 @@
       <transition name="menu">
         <div class="block-menu"
              v-if="showBurgerMenu">
-          <div @click="$router.push ('/')"
+          <div @click="() => {$router.push ('/'); showBurgerMenu = false}"
                class="block-main"
                style="cursor: pointer"
           >
@@ -77,14 +70,14 @@
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" style="position: relative; margin: 0" class="rate-block">
-                <p style="font-size: 17px" @click="$router.push('/individual')">Индивидульный</p>
-                <p style="font-size: 17px" @click="$router.push('/wedding')">Свадебный</p>
-                <p style="font-size: 17px" @click="$router.push('/family')">Семейный</p>
-                <p style="font-size: 17px" @click="$router.push('/love')">Love Story</p>
+                <p style="font-size: 17px" @click="() => {$router.push('/individual'); hideRateBlock =false ;showBurgerMenu = false}">Индивидульный</p>
+                <p style="font-size: 17px" @click="() => {$router.push('/wedding'); hideRateBlock =false; showBurgerMenu = false}">Свадебный</p>
+                <p style="font-size: 17px" @click="() => {$router.push('/family'); hideRateBlock =false; showBurgerMenu = false}">Семейный</p>
+                <p style="font-size: 17px" @click="() => {$router.push('/love'); hideRateBlock =false; showBurgerMenu = false}">Love Story</p>
               </div>
             </transition>
           </div>
-          <div @click="$router.push ('/request')"
+          <div @click="() => {$router.push ('/request'); showBurgerMenu = false}"
                class="block-shows"
                style="cursor: pointer"
           >
@@ -93,7 +86,7 @@
         </div>
       </transition>
       <transition name="bg-block">
-        <div class="block-background" v-if="showBurgerMenu" @click="blockBurgerMenu">
+        <div class="block-background" v-if="showBurgerMenu" @click="showBurgerMenu = false">
         </div>
       </transition>
     </div>
@@ -142,6 +135,9 @@ export default {
     }
   },
   methods: {
+    goToInst(){
+      window.location.href = 'https://instagram.com/alanya.photographer?igshid=YmMyMTA2M2Y='
+    },
 
     scrollToServices() {
       document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
@@ -275,9 +271,10 @@ export default {
   top: 130px;
   left: 0;
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   z-index: 90;
   background: rgba(0, 0, 0, 0.3);
+
 }
 
 .router-animation-leave-active,
