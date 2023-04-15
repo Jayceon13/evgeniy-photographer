@@ -10,7 +10,8 @@
                 <p>Напиши мне и обсудим все детали!</p>
               </div>
               <div class="request-page_block-main_title-content_btn">
-                <div class="request-page_block-main_title-content_btn-text">
+                <div class="request-page_block-main_title-content_btn-text"
+                @click="goToInst()">
                   <p>Написать</p>
                 </div>
               </div>
@@ -23,6 +24,18 @@
 </template>
 
 <script>
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  components: {
+  },
+  methods: {
+    goToInst(){
+      window.location.href = 'https://instagram.com/alanya.photographer?igshid=YmMyMTA2M2Y='
+    },
+  }
+})
+
 </script>
 
 <style scoped>

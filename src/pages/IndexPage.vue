@@ -13,12 +13,14 @@
             в качестве своего фотографа, мне говорят, что у моих фотографий есть свой особый стиль -
             это эмоциональные живые добрые фотографии.</p>
         </div>
-        <div v-if="isWideScreen" id="all-btn" class="first-block_items--btn">
+        <div v-if="isWideScreen" id="all-btn" class="first-block_items--btn"
+             @click="() => {$router.push ('request')}">
           <p>Записаться на съемку</p>
         </div>
       </div>
       <div class="first-block_img"></div>
-      <div v-if="!isWideScreen" id="all-btn" class="first-block_items--btn">
+      <div v-if="!isWideScreen" id="all-btn" class="first-block_items--btn"
+           @click="() => {$router.push ('request')}">
         <p>Записаться на съемку</p>
       </div>
     </div>
@@ -66,13 +68,15 @@
               <img src="/icons/location.svg" alt="">
               <p>Alanya, Cleopatra beach</p>
             </div>
-            <div v-if="isWideScreen" id="all-btn" class="first-block_items--btn">
+            <div v-if="isWideScreen" id="all-btn" class="first-block_items--btn"
+                 @click="() => {$router.push ('rates')}">
               <p>Хочу на съёмку</p>
             </div>
           </div>
         </div>
       </div>
-      <div v-if="!isWideScreen" id="all-btn" class="first-block_items--btn">
+      <div v-if="!isWideScreen" id="all-btn" class="first-block_items--btn"
+           @click="() => {$router.push ('rates')}">
         <p>Хочу на съёмку</p>
       </div>
     </div>
@@ -121,7 +125,8 @@
               <img src="/icons/location.svg" alt="">
               <p>Alanya, Cleopatra beach</p>
             </div>
-            <div id="all-btn" class="first-block_items--btn">
+            <div id="all-btn" class="first-block_items--btn"
+                 @click="() => {$router.push ('rates')}">
               <p>Хочу на съёмку</p>
             </div>
           </div>
@@ -172,7 +177,8 @@
               <img src="/icons/location.svg" alt="">
               <p>Belek</p>
             </div>
-            <div id="all-btn" class="first-block_items--btn">
+            <div id="all-btn" class="first-block_items--btn"
+                 @click="() => {$router.push ('rates')}">
               <p>Хочу на съёмку</p>
             </div>
           </div>
@@ -213,7 +219,8 @@
               сразу написать даты вашего отдыха, город и отель.</p>
             <p>Я стараюсь сделать фотосессию только для вас, именно поэтому предложу вам <span style="color: #FF9900">уединённые локации</span>
               для лучшего результата.</p>
-          <div id="all-btn" class="thirty-block_items--btn">
+          <div id="all-btn" class="thirty-block_items--btn"
+               @click="() => {$router.push ('request')}">
             <p>Записаться на съёмку</p>
           </div>
         </div>
@@ -221,20 +228,26 @@
       <div class="thirty-block_img">
       </div>
     </div>
+    <rates-block></rates-block>
   </q-page>
 </template>
 
 <script>
 import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
+import RatesBlock from "components/RatesBlock";
 
 export default defineComponent({
   name: 'IndexPage',
+  components: {
+    RatesBlock,
+  },
   setup () {
 
     const isWideScreen = ref(window.innerWidth >= 1000)
     const handleResize = () => {
       isWideScreen.value = window.innerWidth >= 1000
     }
+
 
     // подписываемся на событие изменения ширины экрана
     onMounted(() => {
@@ -286,7 +299,7 @@ export default defineComponent({
 
 <style scoped>
 *{
-  font-family: Montserrat;
+  font-family: Montserrat-Regular;
 }
 #title-block {
   font-size: 19px;
