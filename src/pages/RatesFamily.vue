@@ -20,32 +20,33 @@
               <div class="family-page_block-main_title-content_three">
                 <h2>Стоимость</h2>
                 <div class="text-block">
-                  <p class="gold">
-                    Алания
-                  </p>
                   <p>
+                    <span class="gold">
+                      Алания
+                    </span>
                     250 евро
                   </p>
                 </div>
                 <div class="text-block">
-                  <p class="gold">
-                    Анталия/Сиде/Кемер
-                  </p>
                   <p>
+                    <span class="gold">
+                      Анталия/Сиде/Кемер
+                    </span>
                     320 евро
                   </p>
                 </div>
-                <div class="text-block column">
-                  <p class="gold">
-                    Стамбул/Фетхие/Мармарис/Бодрум
-                  </p>
+                <div class="text-block">
                   <p>
+                    <span class="gold">
+                      Стамбул/Фетхие/Мармарис/Бодрум
+                    </span>
                     450 евро
                   </p>
                 </div>
               </div>
               <div class="family-page_block-main_title-content_btn">
-                <div class="family-page_block-main_title-content_btn-text">
+                <div class="family-page_block-main_title-content_btn-text"
+                     @click="goToInst()">
                   <p>Смотреть портфолио</p>
                 </div>
               </div>
@@ -95,6 +96,18 @@
 </template>
 
 <script>
+import {defineComponent} from "vue";
+
+export default defineComponent({
+  components: {
+  },
+  methods: {
+    goToInst(){
+      window.location.href = 'https://instagram.com/alanya.photographer?igshid=YmMyMTA2M2Y='
+    },
+  }
+})
+
 </script>
 
 <style scoped>
@@ -105,7 +118,7 @@
 }
 p {
   padding: calc(5px + 1vw) 0px;
-  font-size: calc(5px + 1vw);
+  font-size: calc(10px + 1vw);
   color: #ffffff;
   line-height: normal;
 }
@@ -113,7 +126,7 @@ h2{
   padding: 10px 0;
   text-transform: uppercase;
   color: #FF9900;
-  font-size: calc(4px + 2vw);
+  font-size: calc(8px + 2vw);
   line-height: normal;
 }
 .gold {
@@ -185,6 +198,7 @@ h2{
   justify-content: center;
   padding: 0 40px;
   border: 2px solid #FF9900;
+  cursor: pointer;
 }
 .family-page_block-main_title-content_btn-text:hover {
   background: linear-gradient(180deg, #FF9900 -248.53%, #090C0C 89.24%);

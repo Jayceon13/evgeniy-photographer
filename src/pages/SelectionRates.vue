@@ -9,7 +9,8 @@
                 <h2>Индивидуальный</h2>
               </div>
               <div class="selection-page_block-main_title-content_btn">
-                <div class="selection-page_block-main_title-content_btn-text">
+                <div class="selection-page_block-main_title-content_btn-text"
+                     @click="() => {$router.push ('individual')}">
                   <p>Подробнее</p>
                   <img class="btn-arrow" src="/icons/arrow-btn.svg" alt="">
                 </div>
@@ -23,7 +24,8 @@
                 <h2>Свадебный</h2>
               </div>
               <div class="selection-page_block-main_title-content_btn">
-                <div class="selection-page_block-main_title-content_btn-text">
+                <div class="selection-page_block-main_title-content_btn-text"
+                     @click="() => {$router.push ('wedding')}">
                   <p>Подробнее</p>
                   <img class="btn-arrow" src="/icons/arrow-btn.svg" alt="">
                 </div>
@@ -37,7 +39,8 @@
                 <h2>Семейный</h2>
               </div>
               <div class="selection-page_block-main_title-content_btn">
-                <div class="selection-page_block-main_title-content_btn-text">
+                <div class="selection-page_block-main_title-content_btn-text"
+                     @click="() => {$router.push ('family')}">
                   <p>Подробнее</p>
                   <img class="btn-arrow" src="/icons/arrow-btn.svg" alt="">
                 </div>
@@ -51,7 +54,8 @@
                 <h2>Love Story</h2>
               </div>
               <div class="selection-page_block-main_title-content_btn">
-                <div class="selection-page_block-main_title-content_btn-text">
+                <div class="selection-page_block-main_title-content_btn-text"
+                     @click="() => {$router.push ('love')}">
                   <p>Подробнее</p>
                   <img class="btn-arrow" src="/icons/arrow-btn.svg" alt="">
                 </div>
