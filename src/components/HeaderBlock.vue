@@ -23,10 +23,10 @@
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" class="rate-block">
-                <p>Индивидульный</p>
-                <p>Свадебный</p>
-                <p>Семейный</p>
-                <p>Love Story</p>
+                <p @click="$router.push('/individual')">Индивидульный</p>
+                <p @click="$router.push('/wedding')">Свадебный</p>
+                <p @click="$router.push('/family')">Семейный</p>
+                <p @click="$router.push('/love')">Love Story</p>
               </div>
             </transition>
           </div>
@@ -221,6 +221,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-flow: column;
+  height: 130px;
 }
 .header-block{
   align-items: center;
