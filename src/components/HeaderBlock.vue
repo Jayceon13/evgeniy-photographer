@@ -65,26 +65,25 @@
           >
             Главная
           </div>
-          <div class="header-block__menu-item">
+          <div class="header-block__menu-item"
+          style="justify-content: center; width: auto">
             <div id="rate" class="header-block__menu-item_holiday"
+                 style="justify-content: center"
                  @click="openRateBlock()"
+
             >
-              <p>Тарифы</p>
+              <p style="font-size: 17px">Тарифы</p>
               <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
             </div>
             <transition name="ratehide">
-              <div v-if="hideRateBlock" style="position: relative" class="rate-block">
-                <p @click="$router.push('/individual')">Индивидульный</p>
-                <p @click="$router.push('/wedding')">Свадебный</p>
-                <p @click="$router.push('/family')">Семейный</p>
-                <p @click="$router.push('/love')">Love Story</p>
+              <div v-if="hideRateBlock" style="position: relative; margin: 0" class="rate-block">
+                <p style="font-size: 17px" @click="$router.push('/individual')">Индивидульный</p>
+                <p style="font-size: 17px" @click="$router.push('/wedding')">Свадебный</p>
+                <p style="font-size: 17px" @click="$router.push('/family')">Семейный</p>
+                <p style="font-size: 17px" @click="$router.push('/love')">Love Story</p>
               </div>
             </transition>
           </div>
-<!--          <div @click="() => { !showBurgerMenu; scrollToPartners() }"-->
-<!--               class="block-holidays">-->
-<!--            ПАРТНЕРЫ И КЛИЕНТЫ-->
-<!--          </div>-->
           <div @click="$router.push ('/request')"
                class="block-shows"
                style="cursor: pointer"
@@ -325,6 +324,9 @@ export default {
   text-align: center;
   top: 130px;
   background-color: #0C0F0F;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 .header-block{
   width: 100%;
@@ -541,8 +543,8 @@ export default {
     height: 60px;
   }
   .block-main {
-    font-size: 30px;
-    margin: 30px;
+    font-size: 17px;
+    margin: 20px;
   }
   .block-about{
     font-size: 30px;
@@ -553,8 +555,8 @@ export default {
     margin: 30px;
   }
   .block-shows{
-    font-size: 30px;
-    margin: 30px;
+    font-size: 17px;
+    margin: 20px;
   }
 }
 </style>
