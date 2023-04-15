@@ -9,7 +9,7 @@
 
           <div class="header-block__menu-item">
             <div class="header-block__menu-item_animators"
-                 @click="scrollToServices"
+                 @click="$router.push ('/')"
             >
               <p>Главная</p>
             </div>
@@ -39,7 +39,7 @@
 <!--          </div>-->
           <div class="header-block__menu-item">
             <div class="header-block__menu-item_about"
-                 @click="scrollToContacts"
+                 @click="$router.push ('/request')"
             >
               <p>Запись</p>
             </div>
@@ -49,7 +49,7 @@
              @click="scrollToForm">
           <img src="/icons/Inst.svg" alt="">
         </div>
-        <div v-if="!isWideScreen" :class= "!showBurgerMenu? 'hamburger hamburger--arrow-r' : 'hamburger is-active hamburger--arrow-r'" @click="blockBurgerMenu">
+        <div v-if="!isWideScreen" :class= "!showBurgerMenu? 'hamburger hamburger--3dx' : 'hamburger is-active hamburger--3dx'" @click="blockBurgerMenu">
           <div class="hamburger-box">
             <div class="hamburger-inner" >
             </div>
@@ -58,32 +58,38 @@
       </div>
       <transition name="menu">
         <div class="block-menu"
-             v-if="showBurgerMenu"
-             @click="blockBurgerMenu">
-          <div class="block-home" @click="$router.push ('/')">
-            <img src="/icons/logo.svg">
-          </div>
-          <div @click="() => { !showBurgerMenu; scrollToServices() }"
+             v-if="showBurgerMenu">
+          <div @click="$router.push ('/')"
                class="block-main"
                style="cursor: pointer"
           >
-            О Компании
+            Главная
           </div>
-          <div @click="() => {!showBurgerMenu; scrollToCatalog() }"
-               class="block-about"
-               style="cursor: pointer"
-          >
-            ПРОДУКЦИЯ
+          <div class="header-block__menu-item">
+            <div id="rate" class="header-block__menu-item_holiday"
+                 @click="openRateBlock()"
+            >
+              <p>Тарифы</p>
+              <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
+            </div>
+            <transition name="ratehide">
+              <div v-if="hideRateBlock" style="position: relative" class="rate-block">
+                <p @click="$router.push('/individual')">Индивидульный</p>
+                <p @click="$router.push('/wedding')">Свадебный</p>
+                <p @click="$router.push('/family')">Семейный</p>
+                <p @click="$router.push('/love')">Love Story</p>
+              </div>
+            </transition>
           </div>
 <!--          <div @click="() => { !showBurgerMenu; scrollToPartners() }"-->
 <!--               class="block-holidays">-->
 <!--            ПАРТНЕРЫ И КЛИЕНТЫ-->
 <!--          </div>-->
-          <div @click="() => { !showBurgerMenu; scrollToContacts() }"
+          <div @click="$router.push ('/request')"
                class="block-shows"
                style="cursor: pointer"
           >
-            КОНТАКТЫ
+            Запись
           </div>
         </div>
       </transition>
@@ -243,6 +249,8 @@ export default {
   font-family: Montserrat;
 }
 .header-block__menu-item_order{
+  position: fixed;
+  right: 5%;
   display: flex;
   align-items: center;
   height: 45px;
@@ -250,6 +258,7 @@ export default {
   justify-content: center;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  z-index: 999;
 }
 .block-home{
   display: flex;
@@ -264,18 +273,14 @@ export default {
 }
 .block-background{
   position: fixed;
-  top: 0;
+  top: 130px;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   z-index: 90;
   background: rgba(0, 0, 0, 0.3);
 }
-@media only screen and (max-width: 1000px) {
-  .block-background {
-    background: silver;
-  }
-}
+
 .router-animation-leave-active,
 .router-animation-enter-active{
   transition: opacity 0.5s ease-in-out;
@@ -294,10 +299,10 @@ export default {
 }
 @keyframes slide-up {
   0%{
-    transform: translate(0, 0);
+    transform: translateY(0);
   }
   100%{
-    transform: translate(100%, -200%);
+    transform: translateY(-100%);
   }
 }
 .menu-enter-active{
@@ -306,23 +311,25 @@ export default {
 }
 @keyframes slide-down {
   0%{
-    transform: translate(100%, -200%);
+    transform: translateY(-100%);
   }
   100%{
-    transform: translate(0, 0);
+    transform: translateY(0);
   }
 }
 .block-menu{
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   position: fixed;
   z-index: 99;
   text-align: center;
+  top: 130px;
+  background-color: #0C0F0F;
 }
 .header-block{
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 @media screen and (min-width: 1000px) {
   .header-block{
@@ -411,8 +418,7 @@ export default {
   }
 }
 .hamburger {
-  mix-blend-mode: difference;
-  right: 0;
+  left: 1%;
   position: fixed;
   top: 40px;
   z-index: 9999;
@@ -443,7 +449,7 @@ export default {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: white; }
+  background-color: #FF9900; }
 
 .hamburger-box {
   width: 40px;
@@ -458,7 +464,7 @@ export default {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   width: 40px;
   height: 4px;
-  background-color: white;
+  background-color: #FF9900;
   border-radius: 4px;
   position: absolute;
   transition-property: transform;
@@ -471,11 +477,21 @@ export default {
   top: -10px; }
 .hamburger-inner::after {
   bottom: -10px; }
-.hamburger--arrow-r.is-active .hamburger-inner::before {
-  transform: translate3d(8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+.hamburger--3dx .hamburger-box {
+  perspective: 80px; }
 
-.hamburger--arrow-r.is-active .hamburger-inner::after {
-  transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+.hamburger--3dx .hamburger-inner {
+  transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+  transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dx.is-active .hamburger-inner {
+  background-color: transparent !important;
+  transform: rotateY(180deg); }
+.hamburger--3dx.is-active .hamburger-inner::before {
+  transform: translate3d(0, 10px, 0) rotate(45deg); }
+.hamburger--3dx.is-active .hamburger-inner::after {
+  transform: translate3d(0, -10px, 0) rotate(-45deg); }
 
 .header-block__menu {
   display: flex;
@@ -514,9 +530,6 @@ export default {
   border-bottom: 5px solid #FDAB5F;
 }
 @media only screen and (max-width: 1000px) {
-  .header-block .block-home{
-    margin-left: 5%;
-  }
   .header-aside{
     padding: 0;
   }
