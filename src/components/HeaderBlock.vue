@@ -51,35 +51,37 @@
       </div>
       <transition name="menu">
         <div class="block-menu"
-             v-if="showBurgerMenu">
+             v-if="showBurgerMenu"
+        style="display: flex; justify-content: center; align-items: center">
           <div @click="() => {$router.push ('/'); showBurgerMenu = false}"
                class="block-main"
-               style="cursor: pointer"
+               style="cursor: pointer; width: fit-content"
           >
             Главная
           </div>
           <div class="header-block__menu-item"
-          style="justify-content: center; width: auto">
+          style="justify-content: center; width: auto; flex-direction: column;align-items: center">
             <div id="rate" class="header-block__menu-item_holiday"
-                 style="justify-content: center"
+                 style="justify-content: center; position: relative; align-items: center; width: fit-content"
                  @click="openRateBlock()"
 
             >
               <p style="font-size: 17px">Тарифы</p>
-              <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
+              <img style="position: absolute; right: -34px" :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
             </div>
             <transition name="ratehide">
-              <div v-if="hideRateBlock" class="rate-block">
-                <p style="font-size: 17px" @click="() => {$router.push('/individual'); hideRateBlock =false ;showBurgerMenu = false}">Индивидульный</p>
-                <p style="font-size: 17px" @click="() => {$router.push('/wedding'); hideRateBlock =false; showBurgerMenu = false}">Свадебный</p>
-                <p style="font-size: 17px" @click="() => {$router.push('/family'); hideRateBlock =false; showBurgerMenu = false}">Семейный</p>
-                <p style="font-size: 17px" @click="() => {$router.push('/love'); hideRateBlock =false; showBurgerMenu = false}">Love Story</p>
+              <div v-if="hideRateBlock" class="rate-block"
+              style="position: relative; top: 0">
+                <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/individual'); hideRateBlock =false ;showBurgerMenu = false}">Индивидульный</p>
+                <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/wedding'); hideRateBlock =false; showBurgerMenu = false}">Свадебный</p>
+                <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/family'); hideRateBlock =false; showBurgerMenu = false}">Семейный</p>
+                <p style="font-size: 17px;padding: 4px" @click="() => {$router.push('/love'); hideRateBlock =false; showBurgerMenu = false}">Love Story</p>
               </div>
             </transition>
           </div>
           <div @click="() => {$router.push ('/request'); showBurgerMenu = false}"
                class="block-shows"
-               style="cursor: pointer"
+               style="cursor: pointer;; width: fit-content"
           >
             Запись
           </div>
@@ -211,14 +213,14 @@ export default {
   }
 }
 .arrow{
-  margin-left: 5px;
   transition: 0.5s ease-in-out;
+  padding: 0 10px;
 
 }
 .arrow-active{
   rotate: -180deg;
   transition: 0.5s ease-in-out;
-  margin-left: 5px;
+  padding: 0 10px;
 
 }
 .header {

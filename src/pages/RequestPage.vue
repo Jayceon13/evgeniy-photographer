@@ -57,6 +57,8 @@ h2{
   font-size: calc(8px + 2vw);
   line-height: normal;
   text-align: center;
+  font-family: Forum;
+
 }
 
 .request-page {

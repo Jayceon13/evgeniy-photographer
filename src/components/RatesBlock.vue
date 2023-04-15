@@ -314,6 +314,8 @@ h1 {
   font-size: calc(8px + 2vw);
   line-height: normal;
   text-align: center;
+  font-family: Forum;
+
 }
 h2{
   padding: 10px 0;
@@ -321,6 +323,8 @@ h2{
   color: #FF9900;
   font-size: calc(4px + 2vw);
   line-height: normal;
+  font-family: Forum;
+
 }
 .gold {
   color: #FF9900;

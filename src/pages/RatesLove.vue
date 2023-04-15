@@ -148,6 +148,7 @@ h2{
   color: #FF9900;
   font-size: calc(8px + 2vw);
   line-height: normal;
+  font-family: Forum;
 }
 .gold {
   color: #FF9900;

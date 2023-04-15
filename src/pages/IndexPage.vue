@@ -577,6 +577,7 @@ export default defineComponent({
   font-size: calc(8px + 2vw);
   text-transform: uppercase;
   color: #FF9900;
+  font-family: Forum;
 }
 @media screen and (max-width: 1000px){
   .first-block,
