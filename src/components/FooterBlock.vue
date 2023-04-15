@@ -6,7 +6,7 @@
           <img src="/icons/Logo.svg">
         </div>
         <div class="footer-block__menu-item_order">
-          <img src="/icons/Inst.svg" alt="">
+          <img @click="goToInst" src="/icons/Inst.svg" alt="">
         </div>
         <div class="footer-block__menu">
           <div class="footer-block__menu-item">
@@ -29,15 +29,15 @@
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" class="rate-block">
-                <p @click="$router.push('/individual')">Индивидульный</p>
-                <p @click="$router.push('/wedding')">Свадебный</p>
-                <p @click="$router.push('/family')">Семейный</p>
-                <p @click="$router.push('/love')">Love Story</p>
+                <p @click="()=>{$router.push('/individual'); hideRateBlock =false}">Индивидульный</p>
+                <p @click="()=>{$router.push('/wedding'); hideRateBlock =false}">Свадебный</p>
+                <p @click="()=>{$router.push('/family'); hideRateBlock =false}">Семейный</p>
+                <p @click="()=>{$router.push('/love'); hideRateBlock =false}">Love Story</p>
               </div>
             </transition>
           </div>
           <div class="footer-block__menu-item">
-            <div class="footer-block__menu-item_request">
+            <div @click="$router.push ('/request')" class="footer-block__menu-item_request">
               <p>Запись</p>
             </div>
           </div>
@@ -70,7 +70,9 @@ export default {
     }
   },
   methods: {
-
+    goToInst(){
+      window.location.href = 'https://instagram.com/alanya.photographer?igshid=YmMyMTA2M2Y='
+    },
     scrollToStart() {
       document.getElementById('start').scrollIntoView({ behavior: 'smooth' });
     },
