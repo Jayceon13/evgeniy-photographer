@@ -6,7 +6,7 @@
           <div class="wedding-page_block-main_title">
             <div class="wedding-page_block-main_title-content">
               <div class="wedding-page_block-main_title-content_one">
-                <h2>Свадебный</h2>
+                <h2 class="pad-top">Свадебный</h2>
                 <p>Часовая фотосессия</p>
                 <p>Предварительный подбор удобной и красивой локации</p>
                 <p>По запросу помогу организовать транспорт</p>
@@ -133,12 +133,16 @@ p {
   line-height: normal;
 }
 h2{
+  padding: 20px 0 10px;
   text-transform: uppercase;
   color: #FF9900;
   font-size: calc(8px + 2vw);
   line-height: normal;
   font-family: Forum;
 
+}
+.pad-top {
+  padding: 0 0 10px 0;
 }
 .gold {
   color: #FF9900;
@@ -216,6 +220,9 @@ h2{
   padding: 0 40px;
   border: 2px solid #FF9900;
   cursor: pointer;
+}
+.wedding-page_block-main_title-content_btn-text{
+  font-family: Montserrat-Light;
 }
 .wedding-page_block-main_title-content_btn-text:hover {
   background: linear-gradient(180deg, #FF9900 -248.53%, #090C0C 89.24%);

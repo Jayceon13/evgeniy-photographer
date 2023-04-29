@@ -118,6 +118,9 @@ h2{
   background: #090F0F;
   width: 50%;
 }
+.request-page_block-main_title-content_btn-text p{
+  font-family: Montserrat-Light;
+}
 @media screen and (max-width: 1000px) {
   .request-page_block-main_title-content_btn-text{
     width: 100%;
