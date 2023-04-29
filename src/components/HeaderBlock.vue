@@ -2,46 +2,56 @@
   <div class="header">
     <div class="header-aside">
       <div class="header-block">
-        <div class="block-home" @click="$router.push ('/')">
-          <img src="/icons/Logo.svg">
-        </div>
         <div class="header-block__menu" v-if="isWideScreen">
-
-          <div class="header-block__menu-item">
-            <div class="header-block__menu-item_animators"
-                 @click="$router.push ('/')"
-            >
-              <p>Главная</p>
+          <div class="header-block__menu-item flex-start">
+            <div class="block-home" @click="$router.push ('/')">
+              <img src="/icons/Logo.svg">
             </div>
           </div>
-          <div class="header-block__menu-item">
-            <div id="rate" class="header-block__menu-item_holiday"
-                 @click="openRateBlock()"
-            >
-              <p>Тарифы</p>
-              <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
-            </div>
-            <transition name="ratehide">
-              <div v-if="hideRateBlock" class="rate-block">
-                <p @click="() => {$router.push('/individual'); hideRateBlock =false}">Индивидульный</p>
-                <p @click="() => {$router.push('/wedding'); hideRateBlock =false}">Свадебный</p>
-                <p @click="() => {$router.push('/family'); hideRateBlock =false}">Семейный</p>
-                <p @click="() => {$router.push('/love'); hideRateBlock =false}">Love Story</p>
+          <div class="header-block__menu-items">
+            <div class="header-block__menu-item">
+              <div class="header-block__menu-item_animators"
+                   @click="$router.push ('/')"
+              >
+                <p>Главная</p>
               </div>
-            </transition>
+            </div>
+
+            <div class="header-block__menu-item">
+              <div id="rate" class="header-block__menu-item_holiday"
+                   @click="openRateBlock()"
+              >
+                <div style="display: flex; align-items: center; position: relative">
+                  <p>Тарифы</p>
+                  <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
+                </div>
+
+              </div>
+              <transition name="ratehide">
+                <div v-if="hideRateBlock" class="rate-block">
+                  <p @click="() => {$router.push('/individual'); hideRateBlock =false}">Индивидульный</p>
+                  <p @click="() => {$router.push('/wedding'); hideRateBlock =false}">Свадебный</p>
+                  <p @click="() => {$router.push('/family'); hideRateBlock =false}">Семейный</p>
+                  <p @click="() => {$router.push('/love'); hideRateBlock =false}">Love Story</p>
+                </div>
+              </transition>
+            </div>
+            <div class="header-block__menu-item">
+              <div class="header-block__menu-item_about"
+                   @click="$router.push ('/request')"
+              >
+                <p>Запись</p>
+              </div>
+            </div>
           </div>
-          <div class="header-block__menu-item">
-            <div class="header-block__menu-item_about"
-                 @click="$router.push ('/request')"
-            >
-              <p>Запись</p>
+          <div class="header-block__menu-item flex-end">
+            <div class="header-block__menu-item_order"
+                 @click="goToInst">
+              <img src="/icons/Inst.svg" alt="">
             </div>
           </div>
         </div>
-        <div class="header-block__menu-item_order"
-             @click="goToInst">
-          <img src="/icons/Inst.svg" alt="">
-        </div>
+      </div>
         <div v-if="!isWideScreen" :class= "!showBurgerMenu? 'hamburger hamburger--3dx' : 'hamburger is-active hamburger--3dx'" @click="blockBurgerMenu">
           <div class="hamburger-box">
             <div class="hamburger-inner" >
@@ -93,7 +103,6 @@
       </transition>
     </div>
 
-  </div>
 
 </template>
 
@@ -215,12 +224,16 @@ export default {
 .arrow{
   transition: 0.5s ease-in-out;
   padding: 0 10px;
+  position: absolute;
+  right: -40px;
 
 }
 .arrow-active{
   rotate: -180deg;
   transition: 0.5s ease-in-out;
   padding: 0 10px;
+  position: absolute;
+  right: -40px;
 
 }
 .header {
@@ -237,7 +250,7 @@ export default {
   display: flex;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: 130px;
   background-color: #0C0F0F;
   padding: 5px 5%;
@@ -248,8 +261,6 @@ export default {
   font-size: 20px;
 }
 .header-block__menu-item_order{
-  position: fixed;
-  right: 5%;
   display: flex;
   align-items: center;
   height: 45px;
@@ -267,8 +278,9 @@ export default {
   justify-content: center;
 }
 .block-home img {
-  height: 100%;
-  width: 200px;
+  height: auto;
+  width: 100%;
+  max-width: 150px;
 }
 .block-background{
   position: fixed;
@@ -499,14 +511,15 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
-  padding: 0 40px;
+  justify-content: space-between;
 }
 .header-block__menu-item {
   padding: 0 20px;
-  width: max-content;
+  width: 20%;
   position: relative;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   justify-content: center;
 
 }
@@ -519,7 +532,8 @@ export default {
 }
 
 .header-block__menu-item_holiday{
-
+display: flex;
+  align-items: center;
 }
 .header-block__menu-item_animators:hover,
 .header-block__menu-item_holiday:hover,
@@ -563,5 +577,16 @@ export default {
     font-size: 17px;
     margin: 20px;
   }
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.header-block__menu-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>

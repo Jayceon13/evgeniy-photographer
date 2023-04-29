@@ -15,7 +15,7 @@
                 <h2>Вы получаете</h2>
                 <p>25 фотографий в ретуши</p>
                 <p>Исходные фотографии</p>
-                <p>Все фотографии вы получаете на портале с удобным пользованием</p>
+                <p>Все фотографии вы получаете <br> на портале с удобным пользованием</p>
               </div>
               <div class="individual-page_block-main_title-content_three">
                 <h2>Стоимость</h2>
@@ -161,7 +161,6 @@ p {
   line-height: normal;
 }
 h2{
-  padding: 10px 0;
   text-transform: uppercase;
   color: #FF9900;
   font-size: calc(8px + 2vw);
@@ -179,6 +178,12 @@ h2{
 }
 .individual-page_block{
   width: 90%;
+  padding: 30px 0 160px 0;
+}
+@media screen and (max-width: 1000px) {
+  .individual-page_block{
+    padding: 0 0 60px 0;
+  }
 }
 .individual-page_block-main {
   display: flex;
@@ -209,7 +214,7 @@ h2{
   display: flex;
   flex-direction: column;
   border: 2px solid #FF9900;
-  padding: calc(10px + 2vw);
+  padding: calc(20px + 2vw);
   height: 100%;
   justify-content: space-between;
 }
@@ -231,7 +236,7 @@ h2{
   }
 }
 .individual-page_block-main_title-content_btn{
-  padding: 40px 0;
+  padding: 40px 0 0;
 }
 .individual-page_block-main_title-content_btn-text{
   display: flex;
