@@ -6,7 +6,7 @@
           <div class="wedding-page_block-main_title">
             <div class="wedding-page_block-main_title-content">
               <div class="wedding-page_block-main_title-content_one">
-                <h2>Свадебный</h2>
+                <h2 class="pad-top">Свадебный</h2>
                 <p>Часовая фотосессия</p>
                 <p>Предварительный подбор удобной и красивой локации</p>
                 <p>По запросу помогу организовать транспорт</p>
@@ -15,7 +15,7 @@
                 <h2>Вы получаете</h2>
                 <p>25 фотографий в ретуши</p>
                 <p>Исходные фотографии</p>
-                <p>Все фотографии вы получаете на портале с удобным пользованием</p>
+                <p>Все фотографии вы получаете <br> на портале с удобным пользованием</p>
               </div>
               <div class="wedding-page_block-main_title-content_three">
                 <h2>Стоимость</h2>
@@ -133,13 +133,16 @@ p {
   line-height: normal;
 }
 h2{
-  padding: 10px 0;
+  padding: 20px 0 10px;
   text-transform: uppercase;
   color: #FF9900;
   font-size: calc(8px + 2vw);
   line-height: normal;
   font-family: Forum;
 
+}
+.pad-top {
+  padding: 0 0 10px 0;
 }
 .gold {
   color: #FF9900;
@@ -151,6 +154,12 @@ h2{
 }
 .wedding-page_block{
   width: 90%;
+  padding: 30px 0 160px 0;
+}
+@media screen and (max-width: 1000px) {
+  .wedding-page_block{
+    padding: 0 0 60px 0;
+  }
 }
 .wedding-page_block-main {
   display: flex;
@@ -181,7 +190,7 @@ h2{
   display: flex;
   flex-direction: column;
   border: 2px solid #FF9900;
-  padding: calc(10px + 2vw);
+  padding: calc(20px + 2vw);
   height: 100%;
   justify-content: space-between;
 }
@@ -203,7 +212,7 @@ h2{
   }
 }
 .wedding-page_block-main_title-content_btn{
-  padding: 40px 0;
+  padding: 40px 0 0;
 }
 .wedding-page_block-main_title-content_btn-text{
   display: flex;
@@ -211,6 +220,9 @@ h2{
   padding: 0 40px;
   border: 2px solid #FF9900;
   cursor: pointer;
+}
+.wedding-page_block-main_title-content_btn-text{
+  font-family: Montserrat-Light;
 }
 .wedding-page_block-main_title-content_btn-text:hover {
   background: linear-gradient(180deg, #FF9900 -248.53%, #090C0C 89.24%);

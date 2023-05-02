@@ -25,7 +25,7 @@
                  @click="openRateBlock()"
             >
               <p>Тарифы</p>
-              <img class=hideRateBlock:arrow-active src="/icons/Arrow.svg">
+              <img :class="[!hideRateBlock ? 'arrow' : 'arrow-active']" src="/icons/Arrow.svg">
             </div>
             <transition name="ratehide">
               <div v-if="hideRateBlock" class="rate-block">
@@ -90,9 +90,10 @@ export default {
 
 <style scoped>
 *{
-  font-family: Montserrat-Regular;
+  font-family: Montserrat-Light;
   margin: 0;
   padding: 0;
+  line-height: normal;
 }
 #rate{
   display: flex;
@@ -138,7 +139,21 @@ export default {
     opacity: 1;
   }
 }
+.arrow{
+  transition: 0.5s ease-in-out;
+  padding: 0 10px;
+  position: absolute;
+  right: -32px;
 
+}
+.arrow-active{
+  rotate: -180deg;
+  transition: 0.5s ease-in-out;
+  padding: 0 10px;
+  position: absolute;
+  right: -32px;
+
+}
 .footer {
   display: flex;
   justify-content: center;
@@ -161,12 +176,12 @@ export default {
   z-index: 70;
   justify-content: center;
   flex-direction: column;
-  padding: 60px 0;
+  padding: 100px 0;
 }
 .footer-aside p{
 
   font-size: calc(10px + 1vw);
-  padding: 6px;
+
 }
 .footer-block__menu-item_order{
   display: flex;
@@ -184,29 +199,29 @@ export default {
   justify-content: center;
 }
 .block-home img {
-  height: 100%;
-  width: 200px;
+  height: auto;
+  width: 100%;
+  max-width: 120px;
 }
 
 
 .block-home{
   z-index: 999;
   cursor: pointer;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .footer-block__menu {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 40px;
+  padding: 50px 0 0;
   flex-direction: column;
 }
 .footer-block__menu-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0;
 }
 
 .footer-block__menu-item_main,
@@ -218,7 +233,22 @@ export default {
   transition: 1s ease-in-out;
   text-align: center;
 }
-
+.footer-block__menu-item_main,
+.footer-block__menu-item_rates,
+.footer-block__menu-item_start{
+  padding-bottom: 25px;
+}
+.footer-block__menu-item_request{
+  padding-bottom: 50px;
+}
+.footer-block__menu-item_produced{
+  text-decoration: underline;
+}
+.footer-block__menu-item_rates{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .footer-block__menu-item_main:hover,
 .footer-block__menu-item_rates:hover,
 .footer-block__menu-item_request:hover,
@@ -227,9 +257,13 @@ export default {
   cursor: pointer;
   color: #FF9900;
 }
+.rate-block p{
+  padding-bottom: 6px;
+}
 @media screen and (max-width: 1000px) {
   .rate-block{
     flex-flow: column;
+    padding-bottom: 20px;
   }
 }
 
