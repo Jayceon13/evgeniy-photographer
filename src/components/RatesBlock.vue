@@ -332,13 +332,22 @@ h2{
   color: #FF9900;
   padding-right: 4px;
 }
+.rates {
+  padding-top: 100px;
+}
+@media screen and (max-width: 1000px) {
+  .rates {
+    padding-top: 20px;
+  }
+}
 .rates-page {
   display: flex;
   justify-content: center;
+
 }
 .rates-page_block{
   width: 90%;
-  padding: 30px 0 160px 0;
+  padding: 30px 0 0 0;
 }
 @media screen and (max-width: 1000px) {
   .rates-page_block{
@@ -424,6 +433,9 @@ h2{
 .rates-page_block-aside-img {
   width: 50%;
   padding: 40px;
+}
+.rates-page_block-aside-img-block {
+  height: 100%;
 }
 @media screen and (max-width: 1000px) {
   .rates-page_block-aside-img {
