@@ -3,12 +3,9 @@
     <div class="header-aside">
       <div class="header-block">
         <div class="header-block__menu" v-if="isWideScreen">
-          <div class="header-block__menu-item flex-start">
             <div class="block-home" @click="$router.push ('/')">
               <img src="/icons/Logo.svg">
             </div>
-          </div>
-          <div class="header-block__menu-items">
             <div class="header-block__menu-item">
               <div class="header-block__menu-item_animators"
                    @click="$router.push ('/')"
@@ -43,13 +40,10 @@
                 <p>Запись</p>
               </div>
             </div>
-          </div>
-          <div class="header-block__menu-item flex-end">
             <div class="header-block__menu-item_order"
                  @click="goToInst">
               <img src="/icons/Inst.svg" alt="">
             </div>
-          </div>
         </div>
       </div>
         <div v-if="!isWideScreen" :class= "!showBurgerMenu? 'hamburger hamburger--3dx' : 'hamburger is-active hamburger--3dx'" @click="blockBurgerMenu">
@@ -270,6 +264,7 @@ export default {
   display: flex;
   align-items: center;
   height: 45px;
+  width: 200px;
   border-radius: 20px;
   justify-content: center;
   transition: 0.5s ease-in-out;
@@ -569,6 +564,7 @@ display: flex;
     position: absolute;
     right: 15px;
     top: 38px;
+    width: auto;
   }
   .header-block{
     width: auto;

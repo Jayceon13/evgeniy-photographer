@@ -76,7 +76,7 @@
             </div>
             <div class="fourth-block_items--location">
               <img style="padding-right: 16px" class="img-location" src="/icons/location.svg" alt="">
-              <p>Alanya, Cleopatra beach</p>
+              <p style="margin-left: -10px;">Alanya, Cleopatra beach</p>
             </div>
             <div v-if="isWideScreen" id="all-btn" class="first-block_items--btn"
                  @click="() => {$router.push ('rates')}">
@@ -139,7 +139,7 @@
             </div>
             <div class="seventh-block_items--location">
               <img style="padding-right: 16px" class="img-location" src="/icons/location.svg" alt="">
-              <p>Alanya, Cleopatra beach</p>
+              <p style="margin-left: -10px;">Alanya, Cleopatra beach</p>
             </div>
             <div id="all-btn" class="first-block_items--btn"
                  @click="() => {$router.push ('rates')}">
@@ -198,7 +198,7 @@
             </div>
             <div class="tenth-block_items--location">
               <img style="padding-right: 16px" class="img-location" src="/icons/location.svg" alt="">
-              <p>Belek</p>
+              <p style="margin-left: -10px;">Belek</p>
             </div>
             <div id="all-btn" class="first-block_items--btn"
                  @click="() => {$router.push ('rates')}">
@@ -230,10 +230,10 @@
       </div>
       <div class="twenty-block_items">
         <div class="twenty-block_items--text">
-          <p><span style="color: #FF9900">Бронирование</span> фотосессии производится заранее
+          <p style="padding-top: 40px"><span style="color: #FF9900">Бронирование</span> фотосессии производится заранее
             с задатком для подтверждения конкретной даты.</p>
 
-          <p>Если наши с вами города различаются,
+          <p style="padding-bottom: 0">Если наши с вами города различаются,
             но вы желаете попасть ко мне на фотосессию, буду рад <span style="color: #FF9900">приехать к вам</span> или рассказать
             как добраться ко мне.</p>
         </div>
@@ -245,7 +245,7 @@
           <div>
             <p>Для нашего с вами удобства рекомендую:
               сразу написать даты вашего отдыха, город и отель.</p>
-            <p>Я стараюсь сделать фотосессию только для вас, именно поэтому предложу вам <span style="color: #FF9900">уединённые локации</span>
+            <p style="padding-bottom: 40px">Я стараюсь сделать фотосессию только для вас, именно поэтому предложу вам <span style="color: #FF9900">уединённые локации</span>
               для лучшего результата.</p>
           </div>
           <div id="last-btn" class="thirty-block_items--btn"
