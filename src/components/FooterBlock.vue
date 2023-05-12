@@ -103,10 +103,13 @@ export default {
   justify-content: center;
   text-align: center;
   transition: transform 0.5s;
+  flex-flow: column;
+  padding-bottom: 15px;
 }
 .rate-block p{
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  padding: 0 10px 0 10px;
 }
 .rate-block p:hover{
   color: #FF9900;
