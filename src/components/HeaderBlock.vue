@@ -58,6 +58,13 @@
             </div>
           </div>
         </div>
+      <div v-if="!isWideScreen" class="block-home" @click="$router.push ('/')">
+        <img src="/icons/Logo.svg">
+      </div>
+        <div v-if="!isWideScreen" class="header-block__menu-item_order"
+             @click="goToInst">
+          <img src="/icons/Inst.svg" alt="">
+        </div>
       </div>
       <transition name="menu">
         <div class="block-menu"
@@ -248,7 +255,6 @@ export default {
 
 .header-aside {
   display: flex;
-  position: fixed;
   top: 0;
   width: 100%;
   height: 130px;
@@ -283,7 +289,7 @@ export default {
   max-width: 150px;
 }
 .block-background{
-  position: fixed;
+  position: absolute;
   top: 130px;
   left: 0;
   width: 100vw;
@@ -332,7 +338,7 @@ export default {
 .block-menu{
   width: 100vw;
   height: 50vh;
-  position: fixed;
+  position: absolute;
   z-index: 99;
   text-align: center;
   top: 130px;
@@ -340,6 +346,7 @@ export default {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  color: white;
 }
 .header-block{
   width: 100%;
@@ -434,7 +441,7 @@ export default {
 }
 .hamburger {
   left: 1%;
-  position: fixed;
+  position: absolute;
   top: 40px;
   z-index: 9999;
   padding: 15px 15px;
@@ -553,6 +560,36 @@ display: flex;
 @media only screen and (max-width: 1000px) {
   .header-aside{
     padding: 0;
+    justify-content: center;
+  }
+  .header{
+    height: 110px;
+  }
+  .header-block__menu-item_order{
+    position: absolute;
+    right: 15px;
+    top: 38px;
+  }
+  .header-block{
+    width: auto;
+  }
+  .header-block__menu-item_order img{
+    height: 22px;
+  }
+  .hamburger-inner{
+    width: 20px;
+    height: 2px;
+  }
+  .hamburger-inner::after{
+    width: 20px;
+    height: 2px;
+  }
+  .hamburger-inner::before{
+    width: 20px;
+    height: 2px;
+  }
+  .header-aside{
+    height: 110px;
   }
   .block-menu .block-home{
     height: 60px;
@@ -576,6 +613,17 @@ display: flex;
   .block-shows{
     font-size: 17px;
     margin: 20px;
+  }
+  .block-home img{
+    width: 80px;
+    margin-top: 15px;
+  }
+  .block-menu{
+    top: 110px;
+    height: 300px;
+  }
+  .rate-block{
+    margin-top: 15px;
   }
 }
 .flex-start {
